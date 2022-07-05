@@ -1,0 +1,17 @@
+{{define "home"}}
+<div>
+    <form method="POST" action="/check">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="text" name="text" value={{ .text }}>
+        <input type="submit" name="submit" value="Check">
+    </form>
+</div>
+<div>
+    <p>{{ .rule }}</p>
+    <div style="color: red">
+        {{ range .errors }}
+        <p>{{ . }}</p>
+        {{ end }}
+    </div>
+</div>
+{{end}}
