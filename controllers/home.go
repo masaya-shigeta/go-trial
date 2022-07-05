@@ -110,7 +110,7 @@ func ListCheck(c echo.Context) error {
         cardList := strings.Split(v, " ")
         errorMessages := validation.CheckTextValidation(cardList)
         if (len(errorMessages) > 0) {
-            return c.JSON(http.StatusBadRequest, errorMessages)
+            return c.JSON(http.StatusBadRequest, "カードリストが不正です")
         }
 
         // check
